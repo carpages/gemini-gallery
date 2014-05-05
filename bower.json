@@ -1,0 +1,12 @@
+{
+  "name": "jquery-gallery",
+  "authors": [
+    {"name": "Matt Rose", "email": "matt@mattrose.ca"}
+  ],
+  "dependencies": {
+    "jquery-boiler": "0.1.x",
+    "underscore": "1.6.x",
+    "jquery-modal": "ssh://git@stash.carpages.ca/gem/jquery-modal.git#0.1.x",
+    "jquery-carousel": "ssh://git@stash.carpages.ca/gem/jquery-carousel.git#0.1.x"
+  }
+}
