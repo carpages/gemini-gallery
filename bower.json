@@ -6,7 +6,7 @@
   "dependencies": {
     "jquery-boiler": "0.1.x",
     "underscore": "1.6.x",
-    "jquery-modal": "ssh://git@stash.carpages.ca/gem/jquery-modal.git#1",
-    "jquery-carousel": "ssh://git@stash.carpages.ca/gem/jquery-carousel.git#1"
+    "jquery-modal": "ssh://git@stash.carpages.ca/gem/jquery-modal.git",
+    "jquery-carousel": "ssh://git@stash.carpages.ca/gem/jquery-carousel.git"
   }
 }
