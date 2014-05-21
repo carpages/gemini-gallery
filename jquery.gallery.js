@@ -1,7 +1,7 @@
 define([
   'underscore',
   'jquery.boiler',
-  'modules/gallery/templates',
+  'jquery.gallery.templates',
   'jquery.modal',
   'jquery.carousel'
 ], function(_, $, T){
