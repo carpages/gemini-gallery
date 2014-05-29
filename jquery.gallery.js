@@ -16,6 +16,7 @@ A jQuery plugin to quickly build galleries using a modal and carousel.
  * @requires jquery.boiler
  * @requires jquery.modal
  * @requires jquery.carousel
+ * @requires jquery.lazyload
  * @requires jquery.respond
  *
  * @prop {object} templates {@link jquery.gallery#templates}
@@ -47,6 +48,7 @@ define([
   'jquery.boiler',
   'jquery.modal',
   'jquery.carousel',
+  'jquery.lazyload',
   'jquery.respond'
 ], function($, _, T){
 
