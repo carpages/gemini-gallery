@@ -1,17 +1,66 @@
+/**
+ * @fileoverview
+
+A jQuery plugin to quickly build galleries using a modal and carousel.
+
+### Notes
+- The gallery is built using a list of images. See example.
+
+ *
+ * @namespace jquery.gallery
+ * @copyright Carpages.ca 2014
+ * @author Matt Rose <matt@mattrose.ca>
+ *
+ * @requires underscore
+ * @requires jquery
+ * @requires jquery.boiler
+ * @requires jquery.modal
+ * @requires jquery.carousel
+ * @requires jquery.respond
+ *
+ * @prop {object} templates {@link jquery.gallery#templates}
+ *
+ * @example
+  <html>
+    <ul id="js-gallery">
+      <li>
+        <a href="http://www.placetim.com/200/200/">
+          <img src="http://www.placetim.com/200/200/">
+        </a>
+      </li>
+      <li>
+        <a href="http://www.placetim.com/250/250/">
+          <img src="http://www.placetim.com/250/250/">
+        </a>
+      </li>
+    </ul>
+  </html>
+ *
+ * @example
+  $('#js-gallery').gallery();
+ */
+
 define([
+  'jquery-loader',
   'underscore',
-  'jquery.boiler',
   'jquery.gallery.templates',
+  'jquery.boiler',
   'jquery.modal',
-  'jquery.carousel'
-], function(_, $, T){
+  'jquery.carousel',
+  'jquery.respond'
+], function($, _, T){
 
   $.boiler('gallery', {
     defaults: {
+      /**
+       * Precompiled Handlebar templates to replace default. Expecting 'gallery'
+       * and 'modal'
+       * @name jquery.gallery#templates
+       * @type object
+       * @default {}
+       */
       templates: {}
     },
-
-    events: {},
 
     data: ['title', 'description'],
 
@@ -85,21 +134,19 @@ define([
       //Fit images according to the size of the screen
       plugin.$carousel._fitImages();
 
-      var lazyResize = _.debounce(function(){
+      $.respond.bind('resize', function(e, scrn){
         plugin.$carousel._fitImages();
-      }, 500);
-
-      var windowWidth = window.$window.width();
-
-      window.$window.resize(function(){
-        if(Math.abs(windowWidth - $window.width()) > 20){
-          lazyResize();
-          windowWidth = window.$window.width();
-        }
       });
 
     },
 
+    /**
+     * Open the gallery to a specific item
+     *
+     * @method
+     * @name jquery.gallery#open
+     * @param {integer} page The page to open up the gallery to
+    **/
     open: function(page){
       var plugin = this;
 
@@ -107,6 +154,16 @@ define([
       plugin.$carousel
         .carousel('gotoPage', page, false)
         .lazyload('update');
+    },
+
+    /**
+     * Close the gallery
+     *
+     * @method
+     * @name jquery.gallery#close
+    **/
+    close: function(){
+      this.modal.close();
     }
   });
 
