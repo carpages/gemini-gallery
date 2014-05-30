@@ -90,7 +90,7 @@ define([
       plugin.modal = new $.Modal({
         templates: plugin.T,
         fixed: true,
-        stopPropagation: 'img, .carousel__next, .carousel__previous',
+        stopPropagation: 'img, .js-gallery-nav',
         content: plugin.T.gallery({
           title: plugin.settings.title,
           description: plugin.settings.description,
