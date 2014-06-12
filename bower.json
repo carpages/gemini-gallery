@@ -1,13 +1,11 @@
 {
-  "name": "jquery-gallery",
+  "name": "gemini-gallery",
   "authors": [
     {"name": "Matt Rose", "email": "matt@mattrose.ca"}
   ],
   "dependencies": {
-    "jquery-loader": "ssh://git@stash.carpages.ca/gem/jquery-loader.git",
-    "underscore": "1.6.x",
-    "jquery-boiler": "0.1.x",
-    "jquery-modal": "ssh://git@stash.carpages.ca/gem/jquery-modal.git",
-    "jquery-carousel": "ssh://git@stash.carpages.ca/gem/jquery-carousel.git"
+    "gemini-loader": "ssh://git@stash.carpages.ca/gem/gemini-loader.git",
+    "gemini-modal": "ssh://git@stash.carpages.ca/gem/gemini-modal.git",
+    "gemini-carousel": "ssh://git@stash.carpages.ca/gem/gemini-carousel.git"
   }
 }

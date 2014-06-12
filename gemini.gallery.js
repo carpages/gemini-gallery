@@ -1,25 +1,23 @@
 /**
  * @fileoverview
 
-A jQuery plugin to quickly build galleries using a modal and carousel.
+A Gemini plugin to quickly build galleries using a modal and carousel.
 
 ### Notes
 - The gallery is built using a list of images. See example.
 
  *
- * @namespace jquery.gallery
+ * @namespace gemini.gallery
  * @copyright Carpages.ca 2014
  * @author Matt Rose <matt@mattrose.ca>
  *
- * @requires underscore
- * @requires jquery
- * @requires jquery.boiler
- * @requires jquery.modal
- * @requires jquery.carousel
- * @requires jquery.lazyload
- * @requires jquery.respond
+ * @requires gemini
+ * @requires gemini.modal
+ * @requires gemini.carousel
+ * @requires gemini.lazyload
+ * @requires gemini.respond
  *
- * @prop {object} templates {@link jquery.gallery#templates}
+ * @prop {object} templates {@link gemini.gallery#templates}
  *
  * @example
   <html>
@@ -38,26 +36,26 @@ A jQuery plugin to quickly build galleries using a modal and carousel.
   </html>
  *
  * @example
-  $('#js-gallery').gallery();
+  G('#js-gallery').gallery();
  */
 
 define([
-  'jquery-loader',
-  'underscore',
-  'jquery.gallery.templates',
-  'jquery.boiler',
-  'jquery.modal',
-  'jquery.carousel',
-  'jquery.lazyload',
-  'jquery.respond'
-], function($, _, T){
+  'gemini',
+  'gemini.gallery.templates',
+  'gemini.modal',
+  'gemini.carousel',
+  'gemini.lazyload',
+  'gemini.respond'
+], function($, T){
+
+  var _ = $._;
 
   $.boiler('gallery', {
     defaults: {
       /**
        * Precompiled Handlebar templates to replace default. Expecting 'gallery'
        * and 'modal'
-       * @name jquery.gallery#templates
+       * @name gemini.gallery#templates
        * @type object
        * @default {}
        */
@@ -146,7 +144,7 @@ define([
      * Open the gallery to a specific item
      *
      * @method
-     * @name jquery.gallery#open
+     * @name gemini.gallery#open
      * @param {integer} page The page to open up the gallery to
     **/
     open: function(page){
@@ -162,7 +160,7 @@ define([
      * Close the gallery
      *
      * @method
-     * @name jquery.gallery#close
+     * @name gemini.gallery#close
     **/
     close: function(){
       this.modal.close();
