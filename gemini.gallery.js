@@ -97,7 +97,7 @@ define([
       });
 
       //Activate Carousel
-      plugin.$carousel = plugin.modal.$modal.find('.js-gallery-carousel');
+      plugin.$carousel = plugin.modal.$content.find('.js-gallery-carousel');
       plugin.$carousel
         .carousel({scrollDelay:500, scrollEventDelay:500, loop:true})
         .lazyload({
@@ -109,7 +109,7 @@ define([
       //Key press
       window.$window.on('keydown', function(e){
 
-        if( !plugin.modal.$wrapper.hasClass('is-active') ) return;
+        if( !plugin.modal.$modal.hasClass('is-active') ) return;
 
         if(e.keyCode==37){//left
 
