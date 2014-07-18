@@ -17,6 +17,7 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
  * @requires gemini.lazyload
  * @requires gemini.respond
  *
+ * @prop {integer} scrollSpeed {@link gemini.carousel#scrollSpeed}
  * @prop {object} templates {@link gemini.gallery#templates}
  *
  * @example
@@ -52,6 +53,14 @@ define([
 
   $.boiler('gallery', {
     defaults: {
+      /**
+       * The speed that the carousel scrolls at in milliseconds.
+       * @name gemini.carousel#scrollSpeed
+       * @type Integer
+       * @default 500
+       */
+      scrollSpeed: 500,
+
       /**
        * Precompiled Handlebar templates to replace default. Expecting 'gallery'
        * and 'modal'
@@ -99,7 +108,7 @@ define([
       //Activate Carousel
       plugin.$carousel = plugin.modal.$content.find('.js-gallery-carousel');
       plugin.$carousel
-        .carousel({scrollDelay:500, scrollEventDelay:500, loop:true})
+        .carousel({scrollSpeed: plugin.settings.scrollSpeed, loop:true})
         .lazyload({
           images:'img.lazy',
           effect:'fadeIn',
