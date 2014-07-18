@@ -31,7 +31,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"w-modal\">\n  <div class=\"js-modal modal full\">\n    <div class=\"js-modal__content modal__content\"></div>\n  </div>\n</div>\n";
+  return "<div id=\"js-modal\" class=\"modal\">\n  <div id=\"js-modal__content\" class=\"modal__content\"></div>\n  <div id=\"js-modal__close\" class=\"modal__close\"></div>\n</div>\n";
   });
 
 return this["JST"];
