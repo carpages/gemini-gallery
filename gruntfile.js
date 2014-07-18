@@ -7,6 +7,7 @@ module.exports = function(grunt) {
       compile: {
         options: {
           amd: true,
+          namespace: 'Templates.Gallery',
           processName: function(filename) {
             return filename.split('/').pop().replace('.hbs','');
           }
