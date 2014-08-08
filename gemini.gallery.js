@@ -141,10 +141,10 @@ define([
       });
 
       //Fit images according to the size of the screen
-      plugin.$carousel._fitImages();
+      plugin.$carousel.find('.fit')._fit();
 
       $.respond.bind('resize', function(e, scrn){
-        plugin.$carousel._fitImages();
+        plugin.$carousel.find('.fit')._fit();
       });
 
     },

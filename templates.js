@@ -11,7 +11,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 function program1(depth0,data) {
   
   var buffer = "", stack1, helper;
-  buffer += "\n    <li>\n\n      <div class=\"fit-img\">\n        <img class=\"lazy clickable\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"\n        data-original=\"";
+  buffer += "\n    <li>\n\n      <div class=\"fit\">\n        <img class=\"lazy clickable\" src=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"\n        data-original=\"";
   if (helper = helpers.src) { stack1 = helper.call(depth0, {hash:{},data:data}); }
   else { helper = (depth0 && depth0.src); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
   buffer += escapeExpression(stack1)
@@ -32,7 +32,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div id=\"js-modal\" class=\"modal\">\n  <div id=\"js-modal__content\" class=\"modal__content\"></div>\n  <div id=\"js-modal__close\" class=\"modal__close\"></div>\n</div>\n";
+  return "<div id=\"js-modal\" class=\"modal\">\n  <div id=\"js-modal__content\" class=\"modal__content full\"></div>\n  <div id=\"js-modal__close\" class=\"modal__close\"></div>\n</div>\n";
   });
 
 return this["Templates"]["Gallery"];
