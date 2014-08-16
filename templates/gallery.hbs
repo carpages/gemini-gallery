@@ -1,16 +1,20 @@
 <div class="js-gallery-carousel carousel">
-  <ol class="carousel__list">
+  <ul class="carousel__list">
 
   {{#each imgs}}
     <li>
 
       <div class="fit">
-        <img class="lazy clickable" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-        data-original="{{src}}">
+        <img class="lazy clickable"
+          data-original="{{src}}"
+          {{#each screens}}
+            data-{{screen}}="{{src}}"
+          {{/each}}
+          >
       </div>
 
     </li>
   {{/each}}
 
-  </ol>
+  </ul>
 </div>

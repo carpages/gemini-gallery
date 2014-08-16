@@ -18,6 +18,7 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
  * @requires gemini.respond
  *
  * @prop {integer} scrollSpeed {@link gemini.carousel#scrollSpeed}
+ * @prop {array} screens {@link gemini.carousel#screens}
  * @prop {object} templates {@link gemini.gallery#templates}
  *
  * @example
@@ -62,6 +63,15 @@ define([
       scrollSpeed: 500,
 
       /**
+       * An array of screens to look for in the anchors data attributes to use
+       * when lazy loading the images
+       * @name gemini.carousel#screens
+       * @type Array
+       * @default []
+       */
+      screens: [],
+
+      /**
        * Precompiled Handlebar templates to replace default. Expecting 'gallery'
        * and 'modal'
        * @name gemini.gallery#templates
@@ -88,8 +98,19 @@ define([
           plugin.open.call(plugin, i+1);
         });
 
+        var screens = [];
+        _.each(plugin.settings.screens, function(scn){
+          if(!!$anchor.data(scn)) {
+            screens.push({
+              screen: scn,
+              src: $anchor.data(scn)
+            });
+          }
+        });
+
         return {
-          src: $anchor.attr('href')
+          src: $anchor.attr('href'),
+          screens: screens
         };
       });
 
