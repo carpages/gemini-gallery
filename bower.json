@@ -11,8 +11,8 @@
     "templates"
   ],
   "dependencies": {
-    "gemini-loader": "ssh://git@stash.carpages.ca/gem/gemini-loader.git#~0",
-    "gemini-modal": "ssh://git@stash.carpages.ca/gem/gemini-modal.git#~0",
-    "gemini-carousel": "ssh://git@stash.carpages.ca/gem/gemini-carousel.git#~0"
+    "gemini-loader": "~0",
+    "gemini-modal": "~0",
+    "gemini-carousel": "~0"
   }
 }
