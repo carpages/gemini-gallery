@@ -1,57 +1,53 @@
-define(['handlebars'], function(Handlebars) {
+(function(factory) {
+
+if (typeof define === 'function' && define.amd) {
+
+define(['handlebars'], factory);
+
+} else if (typeof exports === 'object') {
+
+module.exports = factory(require('handlebars'));
+
+} else {
+
+factory(Handlebars);
+
+}
+
+}(function(Handlebars) {
 
 this["Templates"] = this["Templates"] || {};
-this["Templates"]["Gallery"] = this["Templates"]["Gallery"] || {};
+this["Templates"]["Default"] = this["Templates"]["Default"] || {};
+this["Templates"]["Default"]["Gallery"] = this["Templates"]["Default"]["Gallery"] || {};
 
-this["Templates"]["Gallery"]["gallery"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  var buffer = "", stack1, functionType="function", escapeExpression=this.escapeExpression, self=this;
+this["Templates"]["Default"]["Gallery"]["gallery"] = Handlebars.template({"1":function(depth0,helpers,partials,data) {
+    var stack1, helper;
 
-function program1(depth0,data) {
-  
-  var buffer = "", stack1, helper;
-  buffer += "\n    <li>\n\n      <div class=\"fit\">\n        <img class=\"lazy clickable\"\n          data-original=\"";
-  if (helper = helpers.src) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.src); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\"\n          ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.screens), {hash:{},inverse:self.noop,fn:self.program(2, program2, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n          >\n      </div>\n\n    </li>\n  ";
-  return buffer;
-  }
-function program2(depth0,data) {
-  
-  var buffer = "", stack1, helper;
-  buffer += "\n            data-";
-  if (helper = helpers.screen) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.screen); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "=\"";
-  if (helper = helpers.src) { stack1 = helper.call(depth0, {hash:{},data:data}); }
-  else { helper = (depth0 && depth0.src); stack1 = typeof helper === functionType ? helper.call(depth0, {hash:{},data:data}) : helper; }
-  buffer += escapeExpression(stack1)
-    + "\"\n          ";
-  return buffer;
-  }
+  return "    <li>\n\n      <div class=\"fit\">\n        <img class=\"lazy clickable\"\n          data-original=\""
+    + this.escapeExpression(((helper = (helper = helpers.src || (depth0 != null ? depth0.src : depth0)) != null ? helper : helpers.helperMissing),(typeof helper === "function" ? helper.call(depth0,{"name":"src","hash":{},"data":data}) : helper)))
+    + "\"\n"
+    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.screens : depth0),{"name":"each","hash":{},"fn":this.program(2, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + "          >\n      </div>\n\n    </li>\n";
+},"2":function(depth0,helpers,partials,data) {
+    var helper, alias1=helpers.helperMissing, alias2="function", alias3=this.escapeExpression;
 
-  buffer += "<div class=\"js-gallery-carousel carousel\">\n  <ul class=\"carousel__list\">\n\n  ";
-  stack1 = helpers.each.call(depth0, (depth0 && depth0.imgs), {hash:{},inverse:self.noop,fn:self.program(1, program1, data),data:data});
-  if(stack1 || stack1 === 0) { buffer += stack1; }
-  buffer += "\n\n  </ul>\n</div>\n";
-  return buffer;
-  });
+  return "            data-"
+    + alias3(((helper = (helper = helpers.screen || (depth0 != null ? depth0.screen : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"screen","hash":{},"data":data}) : helper)))
+    + "=\""
+    + alias3(((helper = (helper = helpers.src || (depth0 != null ? depth0.src : depth0)) != null ? helper : alias1),(typeof helper === alias2 ? helper.call(depth0,{"name":"src","hash":{},"data":data}) : helper)))
+    + "\"\n";
+},"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    var stack1;
 
-this["Templates"]["Gallery"]["modal"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
+  return "<div class=\"js-gallery-carousel carousel\">\n  <ul class=\"carousel__list\">\n\n"
+    + ((stack1 = helpers.each.call(depth0,(depth0 != null ? depth0.imgs : depth0),{"name":"each","hash":{},"fn":this.program(1, data, 0),"inverse":this.noop,"data":data})) != null ? stack1 : "")
+    + "\n  </ul>\n</div>\n";
+},"useData":true});
 
+this["Templates"]["Default"]["Gallery"]["modal"] = Handlebars.template({"compiler":[6,">= 2.0.0-beta.1"],"main":function(depth0,helpers,partials,data) {
+    return "<div class=\"js-modal  modal\">\n  <div class=\"js-modal__content  modal__content  full\"></div>\n  <div class=\"js-modal__close  modal__close\">Close</div>\n</div>\n";
+},"useData":true});
 
-  return "<div id=\"js-modal\" class=\"modal\">\n  <div id=\"js-modal__content\" class=\"modal__content full\"></div>\n  <div id=\"js-modal__close\" class=\"modal__close\"></div>\n</div>\n";
-  });
+return this["Templates"]["Default"]["Gallery"];
 
-return this["Templates"]["Gallery"];
-
-});
+}));
