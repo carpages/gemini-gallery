@@ -12,7 +12,14 @@
   ],
   "dependencies": {
     "gemini-loader": "~0",
-    "gemini-modal": "~0",
-    "gemini-carousel": "~0"
+    "gemini-modal": "~1",
+    "gemini-carousel": "~1",
+    "gemini-lazyload": "~0",
+    "handlebars": "~3.0.3"
+  },
+  "devDependencies": {
+    "requirejs": "~2.1.11",
+    "qunit": "~1.18.0",
+    "gemini-css": "~1"
   }
 }

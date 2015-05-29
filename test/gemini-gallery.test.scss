@@ -1,0 +1,8 @@
+$gemini-use: (
+  fit: true
+);
+
+@import "../bower_components/gemini-css/init.scss";
+
+@import "../bower_components/gemini-modal/sass/modal";
+@import "../bower_components/gemini-carousel/sass/carousel";
