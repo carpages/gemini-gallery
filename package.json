@@ -7,11 +7,19 @@
     "email": "matt@mattrose.ca",
     "url": "http://mattrose.ca"
   },
+  "main": "gemini.gallery.js",
   "licenses": [
     {
       "type": "MIT"
     }
   ],
+  "dependencies": {
+    "gemini-loader": "~0",
+    "gemini-modal": "~1",
+    "gemini-carousel": "~1",
+    "gemini-lazyload": "~0",
+    "handlebars": "~3.0.3"
+  },
   "devDependencies": {
     "grunt": "~0.4.2",
     "grunt-contrib-handlebars": "mattdrose/grunt-contrib-handlebars#master",
