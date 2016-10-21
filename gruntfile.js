@@ -42,16 +42,11 @@ module.exports = function( grunt ) {
         }
       }
     },
-    jshint: {
+    eslint: {
       options: {
-        reporter: require( 'jshint-stylish' )
+        configFile: '.eslintrc'
       },
-      src: {
-        options: {
-          jshintrc: './.jshintrc'
-        },
-        src: [ './gemini.gallery.js' ]
-      }
+      target: [ 'gemini.gallery.js' ]
     },
     connect: {
       server: {
@@ -165,6 +160,6 @@ module.exports = function( grunt ) {
   });
 
   // Default task.
-  grunt.registerTask( 'default', [ 'compass', 'jshint'/*, 'connect', 'qunit' */ ]);
+  grunt.registerTask( 'default', [ 'compass', 'eslint'/*, 'connect', 'qunit' */ ]);
   grunt.registerTask( 'ci', [ 'default'/*, 'saucelabs-qunit' */ ]);
 };
