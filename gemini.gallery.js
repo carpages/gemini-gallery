@@ -56,7 +56,7 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
   } else if ( typeof exports === 'object' ) {
     // Node/CommonJS
     module.exports = factory(
-      require( 'gemini' ),
+      require( 'gemini-loader' ),
       require( './templates.js' ),
       require( 'gemini.modal' ),
       require( 'gemini.carousel' ),
