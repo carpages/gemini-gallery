@@ -1,10 +1,14 @@
 # CHANGELOG
 
+## v1.0.2
+
+  - Fix linting grunt task
+
 ## v1.0.1
 
-- Remove jshint in favour of eslint with custom ruleset
-- Bump travis-ci node version
-- Fix CommonJS require statement to require the correct gemini-loader module
+  - Remove jshint in favour of eslint with custom ruleset
+  - Bump travis-ci node version
+  - Fix CommonJS require statement to require the correct gemini-loader module
 
 ## v1.0.0
 
