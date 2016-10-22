@@ -1,3 +1,4 @@
+/* global Templates */
 /**
  * @fileoverview
 
@@ -113,12 +114,12 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
 
         $anchor.click( function( e ) {
           e.preventDefault();
-          plugin.open.call( plugin, i + 1 );
+          plugin.open( i + 1 );
         });
 
         var screens = [];
         _.each( plugin.settings.screens, function( scn ) {
-          if ( !!$anchor.data( scn )) {
+          if ( $anchor.data( scn )) {
             screens.push({
               screen: scn,
               src:    $anchor.data( scn )
@@ -160,13 +161,13 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
           return;
         }
 
-        if ( e.keyCode == 37 ) {
+        if ( e.keyCode === 37 ) {
           // left
           plugin.$carousel.carousel( 'previous' );
-        } else if ( e.keyCode == 39 ) {
+        } else if ( e.keyCode === 39 ) {
           // right
           plugin.$carousel.carousel( 'next' );
-        } else if ( e.keyCode == 27 ) {
+        } else if ( e.keyCode === 27 ) {
           // esc
           plugin.modal.close();
         }
