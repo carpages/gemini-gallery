@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.0.4
+
+  - Fix CommonJS module requires
+
 ## v1.0.3
 
   - Fix linting errors
