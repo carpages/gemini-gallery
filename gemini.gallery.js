@@ -122,26 +122,26 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
           if ( $anchor.data( scn )) {
             screens.push({
               screen: scn,
-              src:    $anchor.data( scn )
+              src: $anchor.data( scn )
             });
           }
         });
 
         return {
-          src:     $anchor.attr( 'href' ),
+          src: $anchor.attr( 'href' ),
           screens: screens
         };
       });
 
       // Create the modal
       plugin.modal = new $.Modal({
-        templates:       plugin.T,
-        fixed:           true,
+        templates: plugin.T,
+        fixed: true,
         stopPropagation: 'img, .js-gallery-nav',
-        content:         plugin.T.gallery({
-          title:       plugin.settings.title,
+        content: plugin.T.gallery({
+          title: plugin.settings.title,
           description: plugin.settings.description,
-          imgs:        plugin.imgs
+          imgs: plugin.imgs
         })
       });
 
@@ -150,8 +150,8 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
       plugin.$carousel
         .carousel({ scrollSpeed: plugin.settings.scrollSpeed, loop: true })
         .lazyload({
-          images:    'img.lazy',
-          effect:    'fadeIn',
+          images: 'img.lazy',
+          effect: 'fadeIn',
           threshold: window.$window.width() * 0.8
         });
 
