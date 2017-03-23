@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## v1.1.0
+
+  - Update Handlebars to v4
+
 ## v1.0.4
 
   - Fix CommonJS module requires
