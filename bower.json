@@ -1,7 +1,10 @@
 {
   "name": "gemini-gallery",
   "authors": [
-    {"name": "Matt Rose", "email": "matt@mattrose.ca"}
+    {
+      "name": "Matt Rose",
+      "email": "matt@mattrose.ca"
+    }
   ],
   "main": [
     "gemini.gallery.js",
@@ -11,8 +14,8 @@
     "templates"
   ],
   "dependencies": {
-    "gemini-loader": "~0",
-    "gemini-modal": "~0",
-    "gemini-carousel": "~0"
+    "gemini-loader": "0.3.x",
+    "gemini-modal": "0.3.x",
+    "gemini-carousel": "0.1.x"
   }
 }
