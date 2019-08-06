@@ -1,25 +1,18 @@
 {
   "name": "gemini-gallery",
-  "authors": [
-    {"name": "Matt Rose", "email": "matt@mattrose.ca"}
-  ],
-  "main": [
-    "gemini.gallery.js",
-    "templates.js"
-  ],
-  "ignore": [
-    "templates"
-  ],
+  "authors": [{ "name": "Matt Rose", "email": "matt@mattrose.ca" }],
+  "main": ["gemini.gallery.js", "templates.js"],
+  "ignore": ["templates"],
   "dependencies": {
-    "gemini-loader": "~0",
-    "gemini-modal": "~1",
-    "gemini-carousel": "~1",
-    "gemini-lazyload": "~0",
-    "handlebars": "~4"
+    "gemini-loader": "0.5.x",
+    "gemini-modal": "1.2.x",
+    "gemini-carousel": "1.4.x",
+    "gemini-lazyload": "0.3.x",
+    "handlebars": "4.x"
   },
   "devDependencies": {
-    "requirejs": "~2",
-    "qunit": "~2",
-    "gemini-css": "~1"
+    "requirejs": "2.x",
+    "qunit": "2.x",
+    "gemini-css": "1.3.x"
   }
 }

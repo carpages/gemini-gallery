@@ -1,7 +1,5 @@
 'use strict';
 
-var compassImporter = require( 'compass-importer' );
-
 module.exports = function( grunt ) {
   // Load all grunt tasks
   require( 'load-grunt-tasks' )( grunt );
@@ -13,7 +11,8 @@ module.exports = function( grunt ) {
   grunt.initConfig({
     // Metadata.
     pkg: grunt.file.readJSON( 'package.json' ),
-    banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+    banner:
+      '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
       '<%= grunt.template.today("yyyy-mm-dd") %>\n' +
       '<%= pkg.homepage ? "* " + pkg.homepage + "\\n" : "" %>' +
       '* Copyright (c) <%= grunt.template.today("yyyy") %> <%= pkg.author.name %>;' +
@@ -25,13 +24,18 @@ module.exports = function( grunt ) {
           umd: true,
           namespace: 'Templates.Default.Gallery',
           processName: function( filename ) {
-            return filename.split( '/' ).pop().replace( '.hbs', '' );
+            return filename
+              .split( '/' )
+              .pop()
+              .replace( '.hbs', '' );
           }
         },
-        files: [{
-          src: 'templates/*.hbs',
-          dest: 'templates.js'
-        }]
+        files: [
+          {
+            src: 'templates/*.hbs',
+            dest: 'templates.js'
+          }
+        ]
       }
     },
     qunit: {
@@ -46,9 +50,6 @@ module.exports = function( grunt ) {
       }
     },
     eslint: {
-      options: {
-        configFile: '.eslintrc'
-      },
       target: [ 'gemini.gallery.js' ]
     },
     connect: {
@@ -61,7 +62,8 @@ module.exports = function( grunt ) {
     },
     sass: {
       options: {
-        importer: compassImporter,
+        implementation: require( 'node-sass' ),
+        importer: require( 'compass-importer' ),
         includePaths: [ 'bower_components' ]
       },
       dist: {
@@ -166,6 +168,6 @@ module.exports = function( grunt ) {
   });
 
   // Default task.
-  grunt.registerTask( 'default', [ 'sass', 'eslint'/*, 'connect', 'qunit' */ ]);
-  grunt.registerTask( 'ci', [ 'default'/*, 'saucelabs-qunit' */ ]);
+  grunt.registerTask( 'default', [ 'sass', 'eslint' /*, 'connect', 'qunit' */]);
+  grunt.registerTask( 'ci', [ 'default' /*, 'saucelabs-qunit' */]);
 };

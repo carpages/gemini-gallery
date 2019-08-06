@@ -68,7 +68,7 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
     // Browser globals
     factory( G, Templates.Default.Gallery );
   }
-}( function( $, T ) {
+})( function( $, T ) {
   var _ = $._;
 
   $.boiler( 'gallery', {
@@ -147,13 +147,11 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
 
       // Activate Carousel
       plugin.$carousel = plugin.modal.$content.find( '.js-gallery-carousel' );
-      plugin.$carousel
-        .carousel({ scrollSpeed: plugin.settings.scrollSpeed, loop: true })
-        .lazyload({
-          images: 'img.lazy',
-          effect: 'fadeIn',
-          threshold: window.$window.width() * 0.8
-        });
+      plugin.$carousel.carousel({ scrollSpeed: plugin.settings.scrollSpeed, loop: true }).lazyload({
+        images: 'img.lazy',
+        effect: 'fadeIn',
+        threshold: window.$window.width() * 0.8
+      });
 
       // Key press
       window.$window.on( 'keydown', function( e ) {
@@ -192,14 +190,12 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
      * @method
      * @name gemini.gallery#open
      * @param {integer} page The page to open up the gallery to
-    **/
+     **/
     open: function( page ) {
       var plugin = this;
 
       plugin.modal.open();
-      plugin.$carousel
-        .carousel( 'gotoPage', page, false )
-        .lazyload( 'update' );
+      plugin.$carousel.carousel( 'gotoPage', page, false ).lazyload( 'update' );
     },
 
     /**
@@ -207,7 +203,7 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
      *
      * @method
      * @name gemini.gallery#close
-    **/
+     **/
     close: function() {
       this.modal.close();
     }
@@ -216,4 +212,4 @@ A Gemini plugin to quickly build galleries using a modal and carousel.
   // Return the jquery object
   // This way you don't need to require both jquery and the plugin
   return $;
-}));
+});
