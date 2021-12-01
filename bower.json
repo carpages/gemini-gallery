@@ -10,9 +10,6 @@
     "gemini.gallery.js",
     "templates.js"
   ],
-  "ignore": [
-    "templates"
-  ],
   "dependencies": {
     "gemini-loader": "0.3.x",
     "gemini-modal": "0.3.x",
